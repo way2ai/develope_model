@@ -1,9 +1,9 @@
 
 
-## 基础环境搭建
+## 1.基础环境搭建
 基础环境核心是pytorch
 
-### 创建虚拟环境
+### 1.1.创建虚拟环境
 ~~~bash
 # 创建虚拟环境
 conda create -n my_env python=3.12 -y
@@ -18,7 +18,7 @@ cd my_project
 uv init . --python 3.12
 ~~~
 
-### 编辑uv配置
+### 1.2.编辑uv配置
 例如：
 ~~~
 [project]
@@ -50,7 +50,7 @@ torchvision = [{ index = "pytorch-cu124" }]
 torchaudio = [{ index = "pytorch-cu124" }]
 ~~~
 
-### 安装和验证
+### 1.3.安装和验证
 ~~~bash
 # 怎么判断某个包要不要走 pytorch-cu124
 # 能列出版本：才考虑把它加到 [tool.uv.sources] 绑定该 index
@@ -64,7 +64,7 @@ uv sync
 python -c "import torch, torchvision, torchaudio; print('torch', torch.__version__); print('torchvision', torchvision.__version__); print('torchaudio', torchaudio.__version__); print('cuda build', torch.version.cuda); print('cuda available', torch.cuda.is_available()); print('gpu', torch.cuda.get_device_name(0) if torch.cuda.is_available() else None)"
 ~~~
 
-## 可选依赖
+## 2.可选依赖
 ~~~bash
 # transformers
 uv add transformers accelerate safetensors
