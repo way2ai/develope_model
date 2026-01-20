@@ -41,7 +41,7 @@ default = true
 
 [[tool.uv.index]]
 name = "pytorch-cu124"
-url = "https://download.pytorch.org/whl/cu124"
+url = "https://mirrors.nju.edu.cn/pytorch/whl/cu124"
 explicit = true
 
 # *指定源（保证能稳定拿到 CUDA 版 PyTorch）
